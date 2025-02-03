@@ -117,13 +117,13 @@ variable "cos_kms_crn" {
   type        = string
   default     = null
 
-  validation {
-    condition = anytrue([
-      can(regex("^crn:(.*:){3}kms:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$", var.cos_kms_crn)),
-      var.cos_kms_crn == null,
-    ])
-    error_message = "Key Protect CRN validation failed."
-  }
+  # validation {
+  #   condition = anytrue([
+  #     can(regex("^crn:(.*:){3}kms:(.*:){2}[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}-[0-9a-fA-F]{12}::$", var.cos_kms_crn)),
+  #     var.cos_kms_crn == null,
+  #   ])
+  #   error_message = "Key Protect CRN validation failed."
+  # }
 }
 
 variable "cos_kms_key_crn" {
